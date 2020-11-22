@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>Subscriber List</title>
+    <title>Travel Agency</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
   </head>
   <body>
-    <h1>Welcome to Our Awesome Site!</h1>
-    <h3>Subscribe to our List. Sign-up below!</h3>
+        <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Just Okay Travel Agency!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">About Us</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="privacypolicy.html">Privacy Policy</a>
+          </li>
+          <!--<li class="nav-item dropdown">-->
+          <!--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+          <!--Menu-->
+              <!--</a>-->
+              <!--<div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+              <!--<a class="dropdown-item" href="education.html">Education</a>-->
+              <!--<a class="dropdown-item" href="#">Another action</a>-->
+              <!--<div class="dropdown-divider"></div>-->
+              <!--<a class="dropdown-item" href="#">Something else here</a>-->
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+    <h1>Welcome to The Just Okay Travel Agency!</h1>
+    <h3>Contact Our Agent Below!</h3>
     <!-- Add in the <body> of your template !-->
 <p>Please use the form below to apply for a trip!</p>
  <form action="#" th:action="@{/}" th:object="${customer}" method="post">
@@ -36,6 +72,9 @@
 	</tr>
     </table>
 </form>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
   </body>
 </html>
