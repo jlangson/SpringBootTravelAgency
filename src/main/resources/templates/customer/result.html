@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Subscriber Sign-Up</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h3>Travel Application</h3>
+	<p>Thank you for applying!</p>
+	<h4>Customer:</h4>
+	<p th:text="${firstName}" />
+	<p th:text="${lastName}" />
+	<p th:text="${destination}" />
+        <p th:text="${budget}"/>
+        <p th:text="${email}"/>
+</body>
+</html>
