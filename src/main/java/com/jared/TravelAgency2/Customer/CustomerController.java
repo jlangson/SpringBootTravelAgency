@@ -5,11 +5,14 @@
  */
 package com.jared.TravelAgency2.Customer;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 /**
@@ -35,16 +38,32 @@ public class CustomerController {
         model.addAttribute("destination",customer.getDestination());
         model.addAttribute("budget",customer.getBudget());
         model.addAttribute("email",customer.getEmail());
-//    private String firstName;
-//    private String lastName;
-//    private String destination;
-//    @Column
-//    @CreationTimestamp
-//    private Date signedUp;
-//    private double budget;
-//    }
-//    
-    
+  
     return "customer/result";
     }
+    
+    @GetMapping(value = "/customers")
+    public String customers(Customer customer, Model model){
+        Iterable <Customer> allCustomers = customerRepository.findAll();
+        model.addAttribute("allCustomers", allCustomers);
+        return "customer/customers";
+    }
+    
+//    @GetMapping(value="/exposed_database")
+//    public String customers(Customer customer, Model model){
+//        Iterable <Customer> allCustomers = customerRepository.findAll();
+//        model.addAttribute("allCustomers", allCustomers);
+//        return "exposed_database/customers";
+//    }
+//    
+//    @RequestMapping("/exposed_database")
+//    public string listCustomers(Model model){
+//        model.addAttribute("customers", customerRepository.listAllCustomers());
+//        return "customers";
+//    }
+    
+//    @ModelAttribute("customers")
+//    public Iterable<Customer> customers(){
+//        return customerRepository.findAll();
+//    }
 }

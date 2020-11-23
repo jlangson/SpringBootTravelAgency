@@ -5,6 +5,7 @@
  */
 package com.jared.TravelAgency2.Customer;
 
+
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -12,5 +13,5 @@ import org.springframework.data.repository.CrudRepository;
  * @author jared
  */
 public interface CustomerRepository extends CrudRepository<Customer, Long>{
-    
+
 }
