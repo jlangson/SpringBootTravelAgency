@@ -18,3 +18,13 @@ img{
 .tiny{
     font-size: 10px;
 }
+
+form{
+    margin-left: 10px; 
+}
+
+body { 
+	max-width: 99%;
+	margin: 0 auto;
+	float: none; 
+}
