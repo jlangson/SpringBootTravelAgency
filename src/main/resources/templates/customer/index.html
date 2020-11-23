@@ -3,11 +3,12 @@
   <head>
     <title>Travel Agency</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
+ <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-        <header>
+  <header>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Just Okay Travel Agency!</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="aboutus.html">About Us</a>
@@ -25,15 +26,6 @@
             <li class="nav-item">
             <a class="nav-link" href="privacypolicy.html">Privacy Policy</a>
           </li>
-          <!--<li class="nav-item dropdown">-->
-          <!--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-          <!--Menu-->
-              <!--</a>-->
-              <!--<div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-              <!--<a class="dropdown-item" href="education.html">Education</a>-->
-              <!--<a class="dropdown-item" href="#">Another action</a>-->
-              <!--<div class="dropdown-divider"></div>-->
-              <!--<a class="dropdown-item" href="#">Something else here</a>-->
             </div>
           </li>
         </ul>
@@ -42,10 +34,83 @@
   </header>
 
     <h1>Welcome to The Just Okay Travel Agency!</h1>
-    <h3>Contact Our Agent Below!</h3>
+    <h2><a href="#contact">Contact</a> Us At The Bottom!</h2>
     <!-- Add in the <body> of your template !-->
+    <div class="row image-grid">
+	<div class="col-sm-6 col-md-4">
+		<a href="" target="_self">
+			<img alt="" class="img-fluid center-block" src="images/1.jpg">
+		</a>
+	</div>
+	<div class="col-sm-6 col-md-4">
+		<a href="" target="_self">
+			<img alt="" class="img-fluid center-block" src="images/2.jpg">
+		</a>
+	</div>
+	<div class="col-sm-6 col-md-4">
+		<a href="" target="_self">
+			<img alt="" class="img-fluid center-block" src="images/3.jpg">
+		</a>
+	</div>
+	<div class="col-sm-6 col-md-4">
+		<a href="" target="_self">
+			<img alt="" class="img-fluid center-block" src="images/4.jpg">
+		</a>
+	</div>
+	<div class="col-sm-6 col-md-4">
+		<a href="" target="_self">
+			<img alt="" class="img-fluid center-block" src="images/5.jpg">
+		</a>
+	</div>
+	<div class="col-sm-6 col-md-4">
+		<a href="" target="_self">
+			<img alt="" class="img-fluid center-block" src="images/6.jpg">
+		</a>
+	</div>
+	<div class="col-sm-6 col-md-4">
+		<a href="" target="_self">
+			<img alt="" class="img-fluid center-block" src="images/7.jpg">
+		</a>
+	</div>
+	<div class="col-sm-6 col-md-4">
+		<a href="" target="_self">
+			<img alt="" class="img-fluid center-block" src="images/8.jpg">
+		</a>
+	</div>
+	<div class="col-sm-6 col-md-4">
+		<a href="" target="_self">
+			<img alt="" class="img-fluid center-block" src="images/9.jpg">
+		</a>
+	</div>
+</div>
+<a name="contact"></a>
 <p>Please use the form below to apply for a trip!</p>
- <form action="#" th:action="@{/}" th:object="${customer}" method="post">
+
+<form class="bsr-form " action="#" th:action="@{/}" th:object="${customer}" method="post">
+	<div class="form-group">
+		<label for="tex-input">First Name</label>
+		<input name="text-input" type="text" class="form-control" id="input-text-9576128" th:field="*{firstName}">
+	</div>
+	<div class="form-group">
+		<label for="tex-input">Last Name</label>
+		<input name="text-input" type="text" class="form-control" id="input-text-3463058" th:field="*{lastName}">
+	</div>
+	<div class="form-group">
+		<label for="tex-input">Destination</label>
+		<input name="text-input" type="text" class="form-control" id="input-text-1800410" th:field="*{destination}">
+	</div>
+	<div class="form-group">
+		<label for="tex-input">Budget</label>
+		<input name="text-input" type="text" class="form-control" id="input-text-1828877" th:field="*{budget}">
+	</div>
+	<div class="form-group">
+		<label for="email">Email address</label>
+		<input name="email" type="email" class="form-control" id="input-email-8402650" placeholder="Email" th:field="*{email}">
+	</div>
+	<button type="submit" class="btn btn-primary" id="bsr-submit-button">Submit</button>
+</form>
+
+<!-- <form action="#" th:action="@{/}" th:object="${customer}" method="post">
     <table>
 	<tr>
             <td>First Name:</td>
@@ -71,7 +136,7 @@
 	    <td><button type="submit">Submit Your Request</button></td>
 	</tr>
     </table>
-</form>
+</form>-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
