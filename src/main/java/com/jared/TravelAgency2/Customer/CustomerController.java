@@ -6,6 +6,7 @@
 package com.jared.TravelAgency2.Customer;
 
 import java.util.List;
+import java.util.Stack;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,29 +42,20 @@ public class CustomerController {
   
     return "customer/result";
     }
-    
-    @GetMapping(value = "/customers")
-    public String customers(Customer customer, Model model){
+   
+    @GetMapping(value ="/rich")
+    public String showRich(Customer customer, Model model){
         Iterable <Customer> allCustomers = customerRepository.findAll();
-        model.addAttribute("allCustomers", allCustomers);
-        return "customer/customers";
+        Stack <Customer> richCustomers = new Stack <Customer>();
+        for(Customer varCustomer : allCustomers){
+           if(varCustomer.getBudget() >=2000){
+               richCustomers.push(varCustomer);
+           }
+        }
+        
+        model.addAttribute("richCustomers", richCustomers); //i think this says take the allCustomer java variable and put it in the html file as allCustomers
+        return "customer/rich";
+                
     }
     
-//    @GetMapping(value="/exposed_database")
-//    public String customers(Customer customer, Model model){
-//        Iterable <Customer> allCustomers = customerRepository.findAll();
-//        model.addAttribute("allCustomers", allCustomers);
-//        return "exposed_database/customers";
-//    }
-//    
-//    @RequestMapping("/exposed_database")
-//    public string listCustomers(Model model){
-//        model.addAttribute("customers", customerRepository.listAllCustomers());
-//        return "customers";
-//    }
-    
-//    @ModelAttribute("customers")
-//    public Iterable<Customer> customers(){
-//        return customerRepository.findAll();
-//    }
 }
